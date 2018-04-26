@@ -8,7 +8,7 @@ ARG uid=1000
 ARG gid=1000
 ARG http_port=8080
 ARG agent_port=50000
-ARG agent
+ARG ssh_port=50022
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
@@ -64,6 +64,8 @@ EXPOSE ${http_port}
 
 # will be used by attached slave agents:
 EXPOSE ${agent_port}
+
+EXPOSE ${ssh_port}
 
 ENV COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log
 
